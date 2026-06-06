@@ -400,6 +400,26 @@ ipcMain.handle('rss-fetch', async (event, url) => {
   }
 });
 
+function escapeXml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function unescapeXml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'");
+}
+
 ipcMain.handle('rss-publish-local', async (event, feedPath, entry) => {
   try {
     let items = [];
@@ -410,8 +430,10 @@ ipcMain.handle('rss-publish-local', async (event, feedPath, entry) => {
         // Simple robust regex parser to extract existing items so we don't break XML structures
         const itemMatches = content.match(/<item>[\s\S]*?<\/item>/g) || [];
         for (let match of itemMatches) {
-          const title = (match.match(/<title>(.*?)<\/title>/) || [])[1] || '';
-          const link = (match.match(/<link>(.*?)<\/link>/) || [])[1] || '';
+          const rawTitle = (match.match(/<title>(.*?)<\/title>/) || [])[1] || '';
+          const rawLink = (match.match(/<link>(.*?)<\/link>/) || [])[1] || '';
+          const title = unescapeXml(rawTitle);
+          const link = unescapeXml(rawLink);
           
           // Match description, accounting for CDATA wrappers
           let description = '';
@@ -447,14 +469,14 @@ ipcMain.handle('rss-publish-local', async (event, feedPath, entry) => {
     let xml = `<?xml version="1.0" encoding="UTF-8" ?>\n`;
     xml += `<rss version="2.0">\n`;
     xml += `<channel>\n`;
-    xml += `  <title>${feedTitle}</title>\n`;
-    xml += `  <link>file://${feedPath}</link>\n`;
+    xml += `  <title>${escapeXml(feedTitle)}</title>\n`;
+    xml += `  <link>file://${escapeXml(feedPath)}</link>\n`;
     xml += `  <description>4one2 Custom RSS Feed for Shared Torrents</description>\n`;
     
     for (let item of items) {
       xml += `  <item>\n`;
-      xml += `    <title>${item.title}</title>\n`;
-      xml += `    <link>${item.link}</link>\n`;
+      xml += `    <title>${escapeXml(item.title)}</title>\n`;
+      xml += `    <link>${escapeXml(item.link)}</link>\n`;
       xml += `    <description><![CDATA[${item.description}]]></description>\n`;
       xml += `    <pubDate>${item.pubDate}</pubDate>\n`;
       xml += `  </item>\n`;
