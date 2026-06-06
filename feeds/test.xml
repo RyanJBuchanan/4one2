@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>test</title>
+  <link>file:///Users/ryanj.buchanan/4one2/test.xml</link>
+  <description>4one2 Custom RSS Feed for Shared Torrents</description>
+  <item>
+    <title>4one2</title>
+    <link>magnet:?xt=urn:btih:7c54e019bcfcb60560d4badcc2a74f0899ab1b59&dn=4one2&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce</link>
+    <description><![CDATA[<strong>Comments:</strong> <br><strong>Size:</strong> 1.11 GB<br><a href="magnet:?xt=urn:btih:7c54e019bcfcb60560d4badcc2a74f0899ab1b59&amp;dn=4one2&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce">Magnet Link</a>]]></description>
+    <pubDate>Sat, 06 Jun 2026 17:26:14 GMT</pubDate>
+  </item>
+  <item>
+    <title>4one2 copy</title>
+    <link>magnet:?xt=urn:btih:6c2b87dc2c16e49530f402594a4fafa194a6a1df&dn=4one2+copy&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce</link>
+    <description><![CDATA[<strong>Comments:</strong> <br><strong>Size:</strong> 814.19 MB<br><a href="magnet:?xt=urn:btih:6c2b87dc2c16e49530f402594a4fafa194a6a1df&amp;dn=4one2+copy&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce">Magnet Link</a>]]></description>
+    <pubDate>Sat, 30 May 2026 22:31:36 GMT</pubDate>
+  </item>
+</channel>
+</rss>
